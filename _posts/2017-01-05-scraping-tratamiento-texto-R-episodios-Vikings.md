@@ -85,7 +85,7 @@ seasons <- substrRight(i, 5)
 write.csv(text, file = paste(directory, "/", tvshow, "_", seasons, ".txt", sep=""), row.names = FALSE)
 }
 ```
-###Empezando el tratamiento de texto
+### Empezando el tratamiento de texto
 
 Ahora que ya tenemos todos los archivos de texto podemos empezar con el tratamiento, para ello vamos a usar el paquete [tm](https://www.rdocumentation.org/packages/tm/versions/0.6-2).
 ```
