@@ -109,8 +109,9 @@ author:
 
 
 # Reading Files
-include: ["_pages"]
+include: 
   - .htaccess
+  - _pages
 
 exclude:
   - "*.sublime-project"
