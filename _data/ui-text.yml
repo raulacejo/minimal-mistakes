@@ -3,7 +3,7 @@
 # English (default)
 # -----------------
 en: &DEFAULT_EN
-  page                       : "Página"
+  page                       : "Pagina"
   pagination_previous        : "Anterior"
   pagination_next            : "Siguiente"
   breadcrumb_home_label      : "Inicio"
@@ -20,8 +20,8 @@ en: &DEFAULT_EN
   date_label                 : "Actualizado:"
   comments_label             : "Comentar"
   comments_title             : "Comentarios"
-  more_label                 : "Ver más"
-  related_label              : "Podrías ver también"
+  more_label                 : "Ver mas"
+  related_label              : "Podrias ver tambien"
   follow_label               : "Seguir:"
   feed_label                 : "Feed"
   powered_by                 : "Powered by"
