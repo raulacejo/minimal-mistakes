@@ -82,15 +82,15 @@ author:
   avatar           : "/assets/images/avatar1.jpg"
   bio              : "I am an amazing person."
   location         : "Somewhere"
-  email            :
-  uri              :
+  email            : "raulacejo@gmail.com"
+  uri              : "https://raulacejo.github.io/"
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "https://github.com/raulacejo/"
   google_plus      :
   keybase          :
   instagram        :
@@ -101,7 +101,7 @@ author:
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. http://stackoverflow.com/users/123456/username)
   steam            :
   tumblr           :
-  twitter          :
+  twitter          : "https://twitter.com/raulacejo"
   vine             :
   weibo            :
   xing             :
