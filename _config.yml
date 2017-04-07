@@ -8,7 +8,7 @@
 # Site Settings
 theme                    : minimal-mistakes-jekyll
 locale                   : "es_ES"
-title                    : "Raúl Acejo Site"
+title                    : "Raúl Acejo"
 title_separator          : "-"
 name                     : "Raúl Acejo"
 description              : "An amazing website."
@@ -78,8 +78,8 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  name             : "Raúl Acejo"
+  avatar           : "/assets/images/avatar1.jpg"
   bio              : "I am an amazing person."
   location         : "Somewhere"
   email            :
