@@ -24,7 +24,7 @@ url <- paste(baseurl,"episode_scripts.php?tv-show=", tvshow, sep="")
 
 De la serie Vikings hay disponibles cuatro temporadas con 10 episodios cada una. Lo primero que hacemos es scrapear todos las urls de todos los episodios, para ello las buscamos en el código html. Después de la etiqueta h3, el primer href de s01e01 con class="season-episode-title". Y esta sería la clase que estableceremos como nuestro nodo.
 
-```{r}
+```
 # leer el HTML
 scrape_url <- read_html(url)
 # selección del nodo
@@ -36,16 +36,16 @@ all_urls_season <- html_nodes(scrape_url, s_selector) %>%
 ```
 Veamos la estructura de all_url_Season:
 
-```{r}
+```
 str(all_urls_season)
 ```
-```{r}
+```
 ##  chr [1:40] &quot;view_episode_scripts.php?tv-show=vikings&amp;episode=s01e01&quot; ...
 ```
-```{r}
+```
 head(all_urls_season)
 ```
-```{r}
+```
 ## [1] &quot;view_episode_scripts.php?tv-show=vikings&amp;episode=s01e01&quot;
 ## [2] &quot;view_episode_scripts.php?tv-show=vikings&amp;episode=s01e02&quot;
 ## [3] &quot;view_episode_scripts.php?tv-show=vikings&amp;episode=s01e03&quot;
@@ -53,10 +53,10 @@ head(all_urls_season)
 ## [5] &quot;view_episode_scripts.php?tv-show=vikings&amp;episode=s01e05&quot;
 ## [6] &quot;view_episode_scripts.php?tv-show=vikings&amp;episode=s01e06&quot;
 ```
-```{r}
+```
 tail(all_urls_season)
 ```
-```{r}
+```
 ## [1] &quot;view_episode_scripts.php?tv-show=vikings&amp;episode=s04e05&quot;
 ## [2] &quot;view_episode_scripts.php?tv-show=vikings&amp;episode=s04e06&quot;
 ## [3] &quot;view_episode_scripts.php?tv-show=vikings&amp;episode=s04e07&quot;
@@ -66,7 +66,7 @@ tail(all_urls_season)
 ```
 Podemos ver como efectivamente tenemos 40 urls de episodios (4 temporadas, 10 episodios cada una). Ahora que ya tenemos todas las variables y las urls, podemos empezar tratar los scripts y guardarlos en distintos archivos para hacer el tratamiento de texto.
 
-```{r}
+```
 # Loop a través de las urls de cada temporada
 for (i in all_urls_season) {
   uri <- read_html(paste(baseurl, i, sep="/"))
@@ -88,7 +88,7 @@ write.csv(text, file = paste(directory, "/", tvshow, "_", seasons, ".txt", sep="
 ###Empezando el tratamiento de texto
 
 Ahora que ya tenemos todos los archivos de texto podemos empezar con el tratamiento, para ello vamos a usar el paquete [tm](https://www.rdocumentation.org/packages/tm/versions/0.6-2).
-```{r}
+```
 # cargamos el paquete tm
 library(tm)
 
@@ -108,7 +108,7 @@ inspect(docs[1])
 
 Los scripts contienen mucha información que no necesitamos y no es útil para el tratamiento de texto, por tanto, necesitamos limpiarlo un poco. Borramos números, convertimos el texto a minúscula, borramos signos de puntuación y palabras vacías, en este caso todo está en inglés.
 
-```{r}
+```
 docs <- tm_map(docs, tolower)
 docs <- tm_map(docs, removePunctuation)
 docs <- tm_map(docs, removeNumbers)
@@ -117,32 +117,32 @@ docs <- tm_map(docs, removeWords, stopwords("english"))
 
 Ahora hacemos stemming, que es un método para reducir las palabras a su raíz. Se puede ver como ejemplo de esto las palabras waits, waited, waiting, todas ellas procedentes de la raíz wait.
 
-```{r}
+```
 library(SnowballC)
 docs <- tm_map(docs, stemDocument)
 ```
 
 En todo este proceso hemos borrado muchos caracteres, y se han generado muchos espacios en blanco, por lo que ahora los borramos también.
 
-```{r}
+```
 docs <- tm_map(docs, stripWhitespace)
 ```
 
 Volvemos ahora a echar un vistazo a nuestro archivo.
 
-```{r}
+```
 inspect(docs[1])
 ```
 
 Estamos preparados ya para convertir de nuevo el archivo a texto plano.
 
-```{r]}
+```
 docs <- tm_map(docs, PlainTextDocument)
 ```
 
 Creamos ahora una Matriz de Términos de Documento, la cual recoge el número de veces que cada término del Corpus aparece en cada uno de los documentos. Y le añadimos igualmente los nombres a algunas columnas:
 
-```{r}
+```
 # Creamos la matriz (tdm = Term Document Matrix)
 tdm <- TermDocumentMatrix(docs)
 # Añadimos nombres de columna 
@@ -157,7 +157,7 @@ inspect(tdm[1:10,1:6])
 
 Ahora construimos una Matriz de Documentos y Términos, que no es más que la traspuesta de tdm.
 
-```{r}
+```
 dtm <- DocumentTermMatrix(docs)
 rownames(dtm) <- docname
 dtm
@@ -170,21 +170,21 @@ En este punto ya somos capaces de contestar preguntas como cual es el término q
 
 Vamos a ver los términos más utilizados en la serie, por ejemplo el top 20.
 
-```{r}
+```
 freq <- sort(colSums(as.matrix(dtm)), decreasing=TRUE)
 head(freq,20)
 ```
 
 Añadimos esto a un dataframe para poder visualizarlo. 
 
-```{r}
+```
 tf <- data.frame(term=names(freq), freq=freq)   
 head(tf,20)  
 ```
 
 Y lo pintamos en un gráfico.
 
-```{r}
+```
 tf$term <- factor(tf$term, levels = tf$term[order(-tf$freq)])
 library(ggplot2)
 p <- ggplot(subset(tf, freq>200), aes(term, freq))    
@@ -199,7 +199,7 @@ p
 
 Como pudimos ver anteriormente cuando observamos la Matriz de Términos del Documento (tdm), tenemos muchos términos dispersos (90%). Esto es mucho, por lo que procedemos a eliminarlo.
 
-```{r}
+```
 tdm.common = removeSparseTerms(tdm, sparse = 0.1)
 tdm
 tdm.common
@@ -207,27 +207,27 @@ tdm.common
 
 Conseguimos bajar la dispersión a un 3%. Podemos ver cuántos términos teníamos antes y cuántos tenemos ahora.
 
-```{r}
+```
 dim(tdm)
 dim(tdm.common)
 ```
 
 De 5.608 términos hemos pasado a 36. Inspeccionamos los primeros 10 términos de los primeros 6 documentos.
 
-```{r}
+```
 inspect(tdm.common[1:10,1:6])
 ```
 
 Vamos a ver ahora los términos más utilizados mediante un mapa de calor, utilizando ggplot2. Como este paquete trabaja con matrices, necesitamos convertir tdm.common.
 
-```{r}
+```
 tdm.dense <- as.matrix(tdm.common)
 dim(tdm.dense)
 ```
 
 Para poder visualizar, necesitamos los datos en una matriz normal.
 
-```{r}
+```
 library(reshape2)
 tdm.dense.m <- melt(tdm.dense, value.name = "count")
 head(tdm.dense.m)
@@ -235,7 +235,7 @@ head(tdm.dense.m)
 
 Ahora si podemos montar el mapa de calor.
  
-```{r}
+```
 library(ggplot2)
 ggplot(tdm.dense.m, aes(x = Docs, y = Terms, fill = log10(count))) +
      geom_tile(colour = "white") +
@@ -250,7 +250,7 @@ Con este gráfico podemos ver cuales de los términos más comunes se usan en ca
 
 Vamos a pintar ahora un correlograma de los episodios. Un correlograma es un gráfico de la correlación de una matriz, es muy útil para destacar las variables más correlacionadas en una dataset. En este gráfico, los coeficientes de correlación se colorean en base a sus valores.
 
-```{r}
+```
 corr <- cor(tdm.dense)
 library(corrplot)
 corrplot(corr, method = "circle", type = "upper", tl.col="black", tl.cex=0.7)
@@ -259,7 +259,7 @@ corrplot(corr, method = "circle", type = "upper", tl.col="black", tl.cex=0.7)
 
 Si transponemos el dataset tdm.dense podemos hacer un correlograma para los términos.
 
-```{r}
+```
 tdm.dense.t <- t(tdm.dense)
 corr.t <- cor(tdm.dense.t)
 corrplot(corr.t,method = "circle", type = "upper", tl.col="black", tl.cex=0.7)
