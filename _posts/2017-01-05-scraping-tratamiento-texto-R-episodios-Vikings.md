@@ -1,6 +1,6 @@
 En este post trabajaremos el tratamiento de texto en R. Lo primero será conseguir los datos, y lo que haremos será tratar con scripts que recogen los diálogos completos, que están embebidos en código html de los que extraeremos lo que necesitamos. Usaremos para ello el paquete [rvest](https://www.rdocumentation.org/packages/rvest/versions/0.3.2).
 
-```{r setup, include=FALSE}
+```
 # Cargamos el paquete rvest
 library(rvest)
 ```
@@ -8,7 +8,7 @@ library(rvest)
 Los scripts están escritos de tal forma que podríamos reproducir este ejercicio para cualquier otra serie. 
 Establecemos ahora nuestras variables: serie de tv que queremos, directorios, urls de base, etc...
 
-```{r}
+```
 # En caso de usar otra serie debemos chequear la url que se usa para esa serie.
 tvshow <- "vikings"
  
