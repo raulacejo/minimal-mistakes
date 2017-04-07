@@ -6,11 +6,11 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-theme: minimal-mistakes-jekyll
-locale                   : "en"
-title                    : "Site Title"
+theme                    : minimal-mistakes-jekyll
+locale                   : "es_ES"
+title                    : "Raúl Acejo Site"
 title_separator          : "-"
-name                     : "Your Name"
+name                     : "Raúl Acejo"
 description              : "An amazing website."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
