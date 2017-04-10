@@ -45,8 +45,9 @@ head(obesity)
 
 El dataframe tiene buena pinta, pero necesitamos realizar algunos ajustes para facilitar su representación gráfica:
 
+##Limpieza de datos##
+
 ```
-## Limpieza de datos ####
 str(obesity)
 
 'data.frame':	51 obs. of  5 variables:
@@ -128,7 +129,7 @@ str(states)
  $ Obesity.rank                   : int  3 3 3 3 3 3 3 3 3 3 ...
 ```
 
-###Visualizar los datos###
+##Visualizar los datos##
 
 Por fin ya podemos representar gráficamente los datos de frecuencia de obesidad en los adultos:
 
