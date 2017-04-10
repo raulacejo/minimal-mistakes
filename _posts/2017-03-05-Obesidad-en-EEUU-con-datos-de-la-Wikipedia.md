@@ -128,7 +128,7 @@ str(states)
  $ Obesity.rank                   : int  3 3 3 3 3 3 3 3 3 3 ...
 ```
 
-#####Visualizar los datos#####
+###Visualizar los datos###
 
 Por fin ya podemos representar gráficamente los datos de frecuencia de obesidad en los adultos:
 
@@ -159,4 +159,4 @@ ggplot(states, aes(x = long, y = lat, group = group, fill = Obese.children.and.a
 ![Mapa 2](http://datascienceplus.com/wp-content/uploads/2016/06/children.png)
 
 
-[Oríginal](source: http://datascienceplus.com/visualizing-obesity-across-united-states-by-using-data-from-wikipedia/)
+[Oríginal](http://datascienceplus.com/visualizing-obesity-across-united-states-by-using-data-from-wikipedia/)
