@@ -1,5 +1,3 @@
-### Why R Blog    
-
 Este [artículo](http://itsalocke.com/giving-back-code/) recoge con mucho acierto muchas de las razones que, de uno u otro modo y no en ese orden, me impulsan a crear este blog:
 
 - Si escribes algo para resolver un problema o tarea hay muchas posibilidades de que alguien necesite resolver el mismo problema. Así que, ¿por qué no ayudarle?
