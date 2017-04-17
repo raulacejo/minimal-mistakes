@@ -162,6 +162,7 @@ pattern <- "a.b"
 grep(pattern, strings, value = TRUE)
 grep(pattern, strings, value = TRUE, ignore.case = TRUE)
 ```
+**Actualización**: interesante la [Cheat Sheet de RStudio para expresiones regulares](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf) 
 
 El [artículo oríginal][1] incluye algunos ejemplos para practicar, así como recursos online([este][5] y [este otro][6] que nos pueden ayudar a la hora de construir nuestras expresiones regulares en R.
 
