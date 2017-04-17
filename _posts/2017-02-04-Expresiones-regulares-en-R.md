@@ -94,11 +94,11 @@ grep("\\bab", strings, value = TRUE)
 
 **Operadores**
 
-* .: match con cualquier carácter simple.
-* [...]: una lista de caractéres, match con cualquiera de los caracteres dentro de los corchetes. Igualmente se puede usar un rango de caracteres dentro de los corchetes.
-* [^...]: lista invertida de caracteres, igual que [...] pero el match es con cualquier carácter excepto los incluidos entre corchetes.
-* |: operador "O", se produce el match con cualquiera de los patrones expresados a izquierda y derecha del |.
-* (...): agrupación en expresiones regulares. 
+- .: match con cualquier carácter simple.
+- [...]: una lista de caractéres, match con cualquiera de los caracteres dentro de los corchetes. Igualmente se puede usar un rango de caracteres dentro de los corchetes.
+- [^...]: lista invertida de caracteres, igual que [...] pero el match es con cualquier carácter excepto los incluidos entre corchetes.
+- |: operador "O", se produce el match con cualquiera de los patrones expresados a izquierda y derecha del |.
+- (...): agrupación en expresiones regulares. 
 
 Todo esto se entiende mejor con un ejemplo:
 
