@@ -129,7 +129,7 @@ Nos permiten especificar clases enteras de caracteres, tales como números, letr
 * `[:space:]` espacios en blanco: tabulado, nueva linea, tabulado vertical, retorno de carro, espacio.
 * `\s` espacios.
 * `\S` no espacios.
-* `[:punct:]` caracteres de puntuación, `! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [  ] ^ _ ` { | } ~.`
+* `[:punct:]` caracteres de puntuación, `! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [  ] ^ _ ` `{ | } ~.`
 
 **Estándares de sintaxis**
 
