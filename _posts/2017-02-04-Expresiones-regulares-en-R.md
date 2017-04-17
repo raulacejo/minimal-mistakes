@@ -50,22 +50,22 @@ grep('\'', levels(gDat$country), value = TRUE)
 
 Hay [otros caracteres][4] en R que suelen requerir escape, algunos ejemplos:
 
-* \': comillas simples
-* \": comillas dobles
-* \n: linea nueva
-* \r: retorno de carro
-* \t: tabulado
+* `\'` comillas simples
+* `\"` comillas dobles
+* `\n` linea nueva
+* `\r` retorno de carro
+* `\t` tabulado
 
 **Cuantificadores**
 
 Estos meta-caracteres sirven para especificar el número de repeticiones en el patrón:
 
-* *: aparece al menos 0 veces
-* +: aparece al menos una vez
-* ?: aparece como máximo una vez
-* {n}: aparece exactamente n veces
-* {n,}: aparece al menos n veces
-* {n,m}: aparece entre n y m veces
+* `*` aparece al menos 0 veces
+* `+` aparece al menos una vez
+* `?` aparece como máximo una vez
+* `{n}` aparece exactamente n veces
+* `{n,}` aparece al menos n veces
+* `{n,m}` aparece entre n y m veces
 
 ```
 (strings <- c("a", "ab", "acb", "accb", "acccb", "accccb"))
@@ -79,10 +79,10 @@ grep("ac{2,3}b", strings, value = TRUE)
 
 **Posición del patrón dentro de la cadena**
 
-* ^: el match se encuentra al principio de la cadena.
-* $: el match se encuentra al final de la cadena.
-* \b: el match está al principio de una palabra o tras espacio en blanco. No confundir con ^ $, los cuales buscan match al inicio de cadenas.
-* \B: el match está tras espacio en blanco, y no al principio de una palabra.
+* `^` el match se encuentra al principio de la cadena.
+* `$` el match se encuentra al final de la cadena.
+* `\b` el match está al principio de una palabra o tras espacio en blanco. No confundir con ^ $, los cuales buscan match al inicio de cadenas.
+* `\B` el match está tras espacio en blanco, y no al principio de una palabra.
 
 ```
 (strings <- c("abcd", "cdab", "cabd", "c abd"))
@@ -94,11 +94,11 @@ grep("\\bab", strings, value = TRUE)
 
 **Operadores**
 
-- .: match con cualquier carácter simple.
-- [...]: una lista de caractéres, match con cualquiera de los caracteres dentro de los corchetes. Igualmente se puede usar un rango de caracteres dentro de los corchetes.
-- [^...]: lista invertida de caracteres, igual que [...] pero el match es con cualquier carácter excepto los incluidos entre corchetes.
-- |: operador "O", se produce el match con cualquiera de los patrones expresados a izquierda y derecha del |.
-- (...): agrupación en expresiones regulares. 
+- `.` match con cualquier carácter simple.
+- `[...]` una lista de caractéres, match con cualquiera de los caracteres dentro de los corchetes. Igualmente se puede usar un rango de caracteres dentro de los corchetes.
+- `[^...]` lista invertida de caracteres, igual que [...] pero el match es con cualquier carácter excepto los incluidos entre corchetes.
+- `|` operador "O", se produce el match con cualquiera de los patrones expresados a izquierda y derecha del |.
+- `(...)` agrupación en expresiones regulares. 
 
 Todo esto se entiende mejor con un ejemplo:
 
