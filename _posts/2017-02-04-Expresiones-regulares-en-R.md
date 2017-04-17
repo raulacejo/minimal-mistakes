@@ -96,8 +96,8 @@ grep("\\bab", strings, value = TRUE)
 
 - `.` match con cualquier carácter simple.
 - `[...]` una lista de caractéres, match con cualquiera de los caracteres dentro de los corchetes. Igualmente se puede usar un rango de caracteres dentro de los corchetes.
-- `[^...]` lista invertida de caracteres, igual que [...] pero el match es con cualquier carácter excepto los incluidos entre corchetes.
-- `|` operador "O", se produce el match con cualquiera de los patrones expresados a izquierda y derecha del |.
+- `[^...]` lista invertida de caracteres, igual que `[...]` pero el match es con cualquier carácter excepto los incluidos entre corchetes.
+- `|` operador "O", se produce el match con cualquiera de los patrones expresados a izquierda y derecha del `|`.
 - `(...)` agrupación en expresiones regulares. 
 
 Todo esto se entiende mejor con un ejemplo:
@@ -117,19 +117,19 @@ gsub("(ab) 12", "\\1 34", strings)
 
 Nos permiten especificar clases enteras de caracteres, tales como números, letras... Hay dos formas de construirlos, usando [: :] o usando \.
 
-* [:digit:] o \d: dígitos, 0 1 2 3 4 5 6 7 8 9, similar a [0:9]
-* \D: no dígitos, equivalente a [^0-9]
-* [:lower:]: minúsculas, equivalente a [a-z]
-* [:upper:]: mayúsuclas, equivalente a [A-Z]
-* [:alpha:]: caracteres alfabéticos, equivalente a [[:lower:][:upper:]] o [A-z]
-* [:alnum:]: caracteres alfanumérico, equivalente a [[:alpha][:digit:]] o [A-z0-9]
-* \w: palabras, equivalente a [[:alnum]_] o [A-z0-9_]
-* \W: no palabras, equivalente a [^A-z0-9_]
-* [:blank:]: caractéres en blanco, como espacios o tabuladores
-* [:space:]: espacios en blanco: tabulado, nueva linea, tabulado vertical, retorno de carro, espacio.
-* \s: espacios.
-* \S: no espacios.
-* [:punct:]: caracteres de puntuación, ! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [  ] ^ _ ` { | } ~.
+* `[:digit:]` o `\d` dígitos, 0 1 2 3 4 5 6 7 8 9, similar a `[0:9]`
+* `\D` no dígitos, equivalente a `[^0-9]`
+* `[:lower:]` minúsculas, equivalente a `[a-z]`
+* `[:upper:]` mayúsuclas, equivalente a `[A-Z]`
+* `[:alpha:]` caracteres alfabéticos, equivalente a `[[:lower:][:upper:]]` o `[A-z]`
+* `[:alnum:]` caracteres alfanumérico, equivalente a `[[:alpha][:digit:]]` o `[A-z0-9]`
+* `\w` palabras, equivalente a `[[:alnum]_]` o `[A-z0-9_]`
+* `\W` no palabras, equivalente a `[^A-z0-9_]`
+* `[:blank:]` caractéres en blanco, como espacios o tabuladores
+* `[:space:]` espacios en blanco: tabulado, nueva linea, tabulado vertical, retorno de carro, espacio.
+* `\s` espacios.
+* `\S` no espacios.
+* `[:punct:]` caracteres de puntuación, `! " # $ % & ’ ( ) * + , - . / : ; < = > ? @ [  ] ^ _ ` { | } ~.`
 
 **Estándares de sintaxis**
 
@@ -163,7 +163,7 @@ grep(pattern, strings, value = TRUE, ignore.case = TRUE)
 
 **Actualización**: interesante la [Cheat Sheet de RStudio para expresiones regulares](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf) 
 
-El [artículo oríginal][1] incluye algunos ejemplos para practicar, así como recursos online([este][5] y [este otro][6] que nos pueden ayudar a la hora de construir nuestras expresiones regulares en R.
+El **[artículo oríginal][1]** incluye algunos ejemplos para practicar, así como recursos online([este][5] y [este otro][6] que nos pueden ayudar a la hora de construir nuestras expresiones regulares en R.
 
 [1]: http://stat545.com/block022_regular-expression.html
 [2]: http://www.rdocumentation.org/packages/stringr/versions/1.1.0
