@@ -39,8 +39,7 @@ Pero, ¿como haríamos para extraer todos los archivos que contengan "hw" y lueg
 Como decíamos, una expresión regular es un patrón que describe una relación de cadenas con una estructura común. En R, muchas funciones de {base} así como del paquete stringr utilizan expresiones regulares, incluse el "buscar y reemplazar" en RStudio permite el uso de regex.
 
 ### Sintáxis de las expresiones regulares
-
-Las expresiones regulares normalmente especifican caracteres (o clases de caracteres) a buscar, además de información sobre las repeticiones y la ubicación dentro de la cadena. Esto se logra con la ayuda de meta-caracteres que tienen un significado específico: $ * +. ? [] ^ {} | () \. Vamos a utilizar algunos ejemplos para introducir pequeñas sintaxis de expresiones regulares y entender lo que significan estos metacaracteres.
+Las expresiones regulares normalmente especifican caracteres (o clases de caracteres) a buscar, además de información sobre las repeticiones y la ubicación dentro de la cadena. Esto se logra con la ayuda de meta-caracteres que tienen un significado específico: `$ * +. ? [] ^ {} | () \.` Vamos a utilizar algunos ejemplos para introducir pequeñas sintaxis de expresiones regulares y entender lo que significan estos metacaracteres.
 
 **Secuencias de escape**
 Hay algunos caracteres especiales en R que no pueden ser codificados directamente en una cadena. Por ejemplo, supongamos que especificamos un patrón con comillas simples y que desea encontrar países con la comilla simple '. Tendríamos que "escapar" la comilla simple en el patrón, precediéndola con el metacarácter \, porque es claro que no forma parte de la especificación del patrón. Veamos un código de ejemplo para esto:
