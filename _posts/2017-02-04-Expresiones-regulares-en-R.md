@@ -2,11 +2,11 @@ Siempre me han parecido muy complejas, y al mismo tiempo, nunca he dudado de su 
 
 Me inicio con vosotros en el aprendizaje de expresiones regulares (también conocidas como regex) a través del [tutorial][1] de Gloria Li and Jenny Bryan.
 
-#####Preparación de los datos y paquetes
+### Preparación de los datos y paquetes
 
 En esta guía se usa el paquete [stringr][2] de Hadley Wickham, que facilita mucho el uso de regex en R. Así que si no lo has hecho ya, deberías instalarlo:
 
-```{r echo = FALSE} 
+```
 library(stringr)
 ```
 
@@ -38,7 +38,7 @@ Pero, ¿como haríamos para extraer todos los archivos que contengan "hw" y lueg
 
 Como decíamos, una expresión regular es un patrón que describe una relación de cadenas con una estructura común. En R, muchas funciones de {base} así como del paquete stringr utilizan expresiones regulares, incluse el "buscar y reemplazar" en RStudio permite el uso de regex.
 
-#####Sintáxis de las expresiones regulares
+### Sintáxis de las expresiones regulares
 
 Las expresiones regulares normalmente especifican caracteres (o clases de caracteres) a buscar, además de información sobre las repeticiones y la ubicación dentro de la cadena. Esto se logra con la ayuda de meta-caracteres que tienen un significado específico: $ * +. ? [] ^ {} | () \. Vamos a utilizar algunos ejemplos para introducir pequeñas sintaxis de expresiones regulares y entender lo que significan estos metacaracteres.
 
@@ -162,6 +162,7 @@ pattern <- "a.b"
 grep(pattern, strings, value = TRUE)
 grep(pattern, strings, value = TRUE, ignore.case = TRUE)
 ```
+
 **Actualización**: interesante la [Cheat Sheet de RStudio para expresiones regulares](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf) 
 
 El [artículo oríginal][1] incluye algunos ejemplos para practicar, así como recursos online([este][5] y [este otro][6] que nos pueden ayudar a la hora de construir nuestras expresiones regulares en R.
