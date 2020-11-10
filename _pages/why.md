@@ -14,3 +14,5 @@ Igualmente espero incluir contenido propio cuando sea oportuno, y me encantará 
 Además de contribuir a la comunidad, la creación y seguimiento de este blog me proporciona ventajas a nivel personal, ya que me permite ampliar mis conocimientos en programación R para mejorar profesionalmente, así como organizar y clasificar mis notas para un posible uso posterior.
 
 ¿Por qué no?
+
+Hola.
