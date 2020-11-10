@@ -15,4 +15,3 @@ Además de contribuir a la comunidad, la creación y seguimiento de este blog me
 
 ¿Por qué no?
 
-Hola.
